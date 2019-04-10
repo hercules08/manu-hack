@@ -23,8 +23,8 @@
             clear: both;
         }
     </style>
-    <script src="js/azure-storage.table.js"></script>
     <script>
+        var azure = require('azure-storage');
         var SAS_TOKEN = '<insert SAS_TOKEN>';
         var tableUri = 'https://' + 'mahackteam3log' + '.table.core.windows.net';
         var tableService = AzureStorage.Table.createTableServiceWithSas(tableUri, SAS_TOKEN);

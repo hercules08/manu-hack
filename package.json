@@ -1,0 +1,23 @@
+{
+  "name": "manu-hack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hercules08/manu-hack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hercules08/manu-hack/issues"
+  },
+  "homepage": "https://github.com/hercules08/manu-hack#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

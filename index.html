@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+    <script src="js/azure-storage.table.js"></script>
+    <script>
+        var SAS_TOKEN = '<insert SAS_TOKEN>';
+        var tableUri = 'https://' + 'mahackteam3log' + '.table.core.windows.net';
+        var tableService = AzureStorage.Table.createTableServiceWithSas(tableUri, SAS_TOKEN);
+
+        (function poll() {
+            setTimeout(function () {
+                console.log(new Date().toLocalString());
+                poll();
+            }, 2000);
+        })();
+    </script>
+</head>
+
+<body>
+
+    <h2>Microsoft Smart Energy</h2>
+
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h2>Continuous Growing</h2>
+            <table style="width:100%">
+                <tr>
+                    <th>Plant Slot</th>
+                    <th>Growth Stage</th>
+                    <th>Lighting Value</th>
+                </tr>
+                <tr>
+                    <td style="text-align:center">1</td>
+                    <td style="text-align:center">Young</td>
+                    <td style="text-align:center">.5</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">2</td>
+                    <td style="text-align:center">Maturing</td>
+                    <td style="text-align:center">1</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center"> 3</td>
+                    <td style="text-align:center">Mature</td>
+                    <td style="text-align:center">.2</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>WITHOUT Continuous Growing</h2>
+            <table style="width:100%">
+                <tr>
+                    <th>Plant Slot</th>
+                    <th>Growth Stage</th>
+                    <th>Lighting Value</th>
+                </tr>
+                <tr>
+                    <td style="text-align:center">1</td>
+                    <td style="text-align:center">Young</td>
+                    <td style="text-align:center">1</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">2</td>
+                    <td style="text-align:center">Maturing</td>
+                    <td style="text-align:center">1</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center">3</td>
+                    <td style="text-align:center">Mature</td>
+                    <td style="text-align:center">1</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
